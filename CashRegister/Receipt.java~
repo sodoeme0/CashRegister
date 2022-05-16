@@ -1,0 +1,14 @@
+public class Receipt{
+  Transactions transaction = new Transactions();
+   public void receiptHalf1(String name, double val){
+    
+    System.out.println(name+": "+val);
+    
+  }
+  public void receiptHalf2(String name, double val){
+    
+    System.out.println(name+":\t"+val);
+    
+    
+  }
+}

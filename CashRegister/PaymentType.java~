@@ -1,0 +1,44 @@
+public class PaymentType{
+ 
+ 
+ /* scratch the enum shit, create a payment class with methods for each type
+  * that take a parameter that stands for user input and store it in payment type.
+  * "May have to use arraylist*/
+ private String name=null;
+ private double amount=0;
+  
+  public PaymentType(){
+    
+  }
+  
+   public PaymentType(String name, double amount){
+     this.name = name;
+     this.amount = amount;
+    
+  }
+   
+   public String getName(){
+     return name;
+     
+   }
+   public double getAmount(){
+     return amount;
+     
+   }
+  
+  public void setAmount(double x){
+     this.amount = x;
+     
+   }
+  
+ 
+        
+        
+        
+    
+    
+  }
+ 
+ 
+ 
+

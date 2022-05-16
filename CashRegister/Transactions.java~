@@ -1,0 +1,91 @@
+import java.util.*; 
+public class Transactions{
+  /*
+   * Make methods to display each transactions, take values as parameters
+   * */
+  private double total = 0;
+  private ArrayList<Items> shoppingCart = new ArrayList<>();
+  
+//payment array stuff
+ private double subTotal = 0;
+ private PaymentType cash = new PaymentType("Cash", 0);
+ private PaymentType debit = new PaymentType("Debit card", 0);
+ private PaymentType credit = new PaymentType("Credit card", 0);
+ private PaymentType check = new PaymentType("Check", 0);
+ private ArrayList<PaymentType> payments = new ArrayList<>();
+  
+   public void addItem(Items item){
+    shoppingCart.add(item);
+    
+  }
+   public double calcTotal()
+  {
+    for(int x=0; x<shoppingCart.size();x++)
+    {
+      total = total + shoppingCart.get(x).getCost();
+      total = total+ (total*.07);
+    }
+    return total;
+  }
+   public double updatedTotal()
+   {
+     return total;
+   }
+   
+   public double getSubTotal(){
+     
+for(int x=0; x<shoppingCart.size();x++)
+    {
+      subTotal = subTotal + shoppingCart.get(x).getCost();
+    
+    }
+     return subTotal;
+   }
+   
+   public double getTax(){
+     double tax=0;
+     double totalForTax=0;
+     for(int x=0; x<shoppingCart.size();x++)
+    {
+     totalForTax = totalForTax + shoppingCart.get(x).getCost();
+      tax = (totalForTax*.07);
+    }
+     return tax;
+   }
+   public double getChange(){
+     double change=0;
+     if(total<0){
+       change=Math.abs(change);
+     }
+     return change;
+   }
+   public void printItems(){
+    for(int x=0; x<shoppingCart.size();x++){
+      System.out.println("Item "+ (x+1) +": "+shoppingCart.get(x).getName()+": "+
+                         shoppingCart.get(x).getCost());
+
+    }
+  }
+   public void addPayment(int x, double amount){
+    
+     switch(x){
+       
+       case 1: cash.setAmount(amount); payments.add(cash); total=total-amount; break;
+       case 2: debit.setAmount(amount); payments.add(debit);total=total-amount;break;
+       case 3: credit.setAmount(amount); payments.add(credit);total=total-amount;break;
+       case 4: check.setAmount(amount); payments.add(check);total=total-amount;break;
+      
+     }
+     
+   }
+   public boolean isPaymentComplete(){
+     if(total>0){
+       return false;
+   }
+     else{
+       return true;
+     }
+}
+ 
+  
+}

@@ -1,0 +1,36 @@
+import java.util.*; 
+
+public class CashRegister {
+  
+  public static void main(String[] args) {
+    
+    Scanner scan = new Scanner(System.in);
+    int selection = 0;
+    double amount=0;
+    Items bookBag = new Items( "Book Bag" ,  55.7);
+    Items journal = new Items( "Journal" ,  25.3);
+    Items pencils = new Items( "pencil pack" ,  15.5);
+    Receipt receipt = new Receipt();
+    Transactions transaction= new Transactions();
+    transaction.addItem(bookBag);
+    transaction.addItem(journal);
+    transaction.addItem(pencils);
+    
+    transaction.printItems();
+
+    System.out.println("Total: "+transaction.calcTotal());
+    
+    do{
+      System.out.println("Please eneter payment type.");
+      System.out.println("1. Cash\n2. Debit Card\n3. Credit Card\n4. Check");
+      selection = Integer.parseInt(scan.nextLine());
+      System.out.println("Enter the amount to pay with this type.");
+      amount = Double.parseDouble(scan.nextLine());
+      transaction.addPayment(selection, amount);
+    }while(transaction.isPaymentComplete()==false);
+    System.out.println("Total after payment: "+transaction.updatedTotal());
+//transaction.printOutReceipt();
+          //System.out.println(transaction.getShopSize());
+  }
+
+}

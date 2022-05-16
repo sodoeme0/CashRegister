@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="CashRegister.java" package="" timestamp="14-Mar-2021 17:04:13">
+        <select from="512" to="512"/>
+        <scroll column="55" row="0"/>
+      </file>
+      <file name="Items.java" package="" timestamp="14-Mar-2021 16:28:23">
+        <select from="512" to="512"/>
+        <scroll column="55" row="0"/>
+      </file>
+      <file name="PaymentType.java" package="" timestamp="14-Mar-2021 16:28:23">
+        <select from="512" to="512"/>
+        <scroll column="55" row="0"/>
+      </file>
+      <file name="Receipt.java" package="" timestamp="14-Mar-2021 16:29:02">
+        <select from="512" to="512"/>
+        <scroll column="55" row="0"/>
+      </file>
+      <file name="Transactions.java" package="" timestamp="14-Mar-2021 16:31:01">
+        <select from="512" to="512"/>
+        <scroll column="55" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
